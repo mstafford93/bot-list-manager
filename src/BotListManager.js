@@ -55,7 +55,7 @@ const BotListManager = () => {
       <button onClick={addBotToList}>Add bot</button>
       <ul>
         {bots.map((bot) => <li key={bot.id} style={colorChange(bot.status)}>{bot.id}-{bot.name}-{bot.status}
-          <button onClick={() => triggerJob(bot.id)}>Trigger Job</button><button onClick={handleDelete}>Remove Item</button></li>)}
+          <button onClick={() => triggerJob(bot.id)}>Trigger Job</button><button onClick={()=>{handleDelete(bot.id)}}>Remove Item</button></li>)}
       </ul>
     </div>
   );
