@@ -8,14 +8,14 @@ const BotListManager = () => {
   ]);
 
   const triggerJob = (id) => {
-    // Implement this function to change the status of the bot
+    console.log(id)
   };
 
   return (
     <div className="bot-list-manager">
       <h1>Bot List Manager</h1>
       <ul>
-        {bots.map(({id, name, status}) => <li key={id}>{id}-{name}-{status}</li>)}
+        {bots.map(({id, name, status}) => <li key={id}>{id}-{name}-{status} <button onClick={() => triggerJob({id})}>Trigger Job</button></li>)}
       </ul>
     </div>
   );
