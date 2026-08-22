@@ -2,10 +2,23 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 1rem;
+  height: 20vh;
+  align-items: center;
 }
+
+button {
+  width: 70%;
+  padding: 2rem;
+  justify-self: end;
+  margin-right: 1rem;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
