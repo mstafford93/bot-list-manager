@@ -52,7 +52,9 @@ const BotListManager = () => {
   }
 
   const handleSearchResult = () => {
-
+    if(bots.map(bot => bot.status !== searchInput)){
+      return alert(`No status matchin ${searchInput}`)
+    }
     setBots(bots.filter(bot => bot.status === searchInput))
   }
 
