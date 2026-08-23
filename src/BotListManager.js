@@ -53,7 +53,7 @@ const BotListManager = () => {
 
   const handleSearchResult = () => {
 
-    console.log(searchInput)
+    setBots(bots.filter(bot => bot.status === searchInput))
   }
 
   /*Change Object to prop*/
