@@ -7,6 +7,8 @@ const BotListManager = () => {
     { id: 3, name: "Data Analyzer", status: "Stopped", task: "Analyzing data" }
   ]);
 
+  const [searchInput, setSearchInput] = useState("")
+
   const [newBots, setNewBots] = useState({ id: "", botName: "", status: "" })
 
   const handleDelete = (id) => {
@@ -45,10 +47,26 @@ const BotListManager = () => {
     }
   }
 
+  const handleSearchInput = (event) => {
+    setSearchInput(event.target.value)
+  }
+
+  const handleSearchResult = () => {
+
+    console.log(searchInput)
+  }
+
   /*Change Object to prop*/
   return (
     <div className="bot-list-manager">
       <h1>Bot List Manager</h1>
+      <div>
+      <input 
+      type="text" 
+      placeholder='Enter Status'
+      onChange={handleSearchInput}/>
+      <button onClick={handleSearchResult}>Search</button>
+      </div>
       <input type="text" value={newBots.id} onChange={(e) => setNewBots({ ...newBots, id: e.target.value })} placeholder='Bot Id' />
       <input type="text" value={newBots.botName} onChange={(e) => setNewBots({ ...newBots, botName: e.target.value })} placeholder='Bot Name' />
       <input type="text" value={newBots.status} onChange={(e) => setNewBots({ ...newBots, status: e.target.value })} placeholder='Bot Status' />
